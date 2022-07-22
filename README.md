@@ -1,2 +1,2 @@
-# template_helpers
-Template plugin helpers for ckeditor
+# Content template helpers
+Adds helpers for Content template plugin
