@@ -1,0 +1,37 @@
+<?php
+/**
+ * @file
+ * Contains ckeditor_alternative_widgets.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ckeditor_alternative_widgets_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+    case 'help.page.ckeditor_alternative_widgets':
+      $output = '';
+      $output .= '<h3>' . t('Ckeditor Alternative Widgets') . '</h3>';
+      $output .= '<p>' . t('The module adds alternative way to define widgets in CKEditor') . '</p>';
+      $output .= '<h3>' . t('Uses') . '</h3>';
+      $output .= '<dl>';
+      $output .= '<dt>' . t('Settings') . '</dt>';
+      $output .= '<dd>' . t('In the <a href=":text-formats">text formats</a> that use ckeditor, move the Alternaive Widgets icon into the active toolbar.', [':text-formats' => \Drupal::url('filter.admin_overview')]) . '</dd>';
+      $output .= '</dl>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function ckeditor_alternative_widgets_page_attachments_alter(array &$page) {
+  // Attaches js assets globally.
+  //$page['#attached']['library'][] = 'ckeditor_alternative_widgets/alternative_widgets';
+  $page['#attached']['drupalSettings']['ckeditor_alternative_widgets']['widgetDefinitions'] = [];
+}

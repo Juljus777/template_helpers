@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Check requirements for the CKEditor Alternative Widgets module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function ckeditor_alternative_widgets_requirements($phase) {
+  $requirements = [];
+
+  if($phase == 'install' || $phase == 'runtime') {
+    $plugin_detected = file_exists(DRUPAL_ROOT . '/libraries/ckeditor/plugins/templates/plugin.js');
+    if($plugin_detected) {
+      $requirements['ckeditor_alternative_widgets'] = [
+        'title' => t('CKEditor Alternative Widgets'),
+        'value' => t('Plugin detected'),
+        'severity' => REQUIREMENT_OK,
+      ];
+    } else {
+      $requirements['ckeditor_alternative_widgets'] = [
+        'title' => t('CKEditor Alternative Widgets'),
+        'value' => t('Plugin not detected'),
+        'severity' => REQUIREMENT_ERROR,
+        'description' => "The templates plugin is missing from /libraries/ckeditor/templates/.
+        ckeditor_alternative_widgets requires it since they are meant to be used together.",
+      ];
+    }
+  }
+  return $requirements;
+}

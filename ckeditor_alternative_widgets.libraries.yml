@@ -1,0 +1,7 @@
+alternative_widgets:
+  js:
+    js/plugins/ckeditor_alternative_widgets/plugin.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

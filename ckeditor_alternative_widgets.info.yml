@@ -1,0 +1,7 @@
+name: 'CKEditor Alternative Widgets'
+type: module
+description: 'Adds alternative way to define widgets in CKEditor'
+core_version_requirement: ^8.8 || ^9
+package: 'TV'
+libraries:
+  - ckeditor_alternative_widgets/alternative_widgets
