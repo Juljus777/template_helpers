@@ -1,0 +1,7 @@
+name: 'Template Helpers'
+type: module
+description: 'Adds helpers on user defined Content Templates'
+core_version_requirement: ^8.8 || ^9
+package: 'TV'
+libraries:
+  - template_helpers/template_helpers

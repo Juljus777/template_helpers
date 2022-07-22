@@ -1,7 +1,7 @@
 (function ($, drupalSettings) {
 
-  CKEDITOR.plugins.add('ckeditor_alternative_widgets', {
-    icons: 'ckeditor_alternative_widgets',
+  CKEDITOR.plugins.add('template_helpers', {
+    icons: 'template_helpers',
   })
 
   CKEDITOR.on('instanceReady', function (evt) {

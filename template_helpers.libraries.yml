@@ -1,6 +1,6 @@
-alternative_widgets:
+template_helpers:
   js:
-    js/plugins/ckeditor_alternative_widgets/plugin.js: {}
+    js/plugins/template_helpers/plugin.js: {}
   dependencies:
     - core/jquery
     - core/drupal
